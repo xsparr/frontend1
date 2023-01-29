@@ -79,7 +79,7 @@ const Login = () => {
 
                     localStorage.setItem("user_info", JSON.stringify(user_info.data));
                     localStorage.setItem("token", JSON.stringify(response.data.token));
-                    navigate.push("/dashboard");
+                    navigate("/dashboard");
 
                 } catch (err) {
                     swal(err.response.data);
@@ -98,7 +98,7 @@ const Login = () => {
 
     useEffect(() => {
         if (localStorage.getItem("user_info")) {
-            navigate.push("/dashboard");
+            navigate("/dashboard");
         }
     });
 
@@ -163,7 +163,7 @@ Sign In to your account
                   </CForm>
                 </CCardBody>
               </CCard>
-              <CCard className="text-white bg-primary py-5" style={ { width: '44%' }}>
+              <CCard className="text-white bg-primary p-4">
                 <CCardBody className="text-center">
                   <div>
                     <h2>Sign up</h2>

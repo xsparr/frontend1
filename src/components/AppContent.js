@@ -6,13 +6,14 @@ import { CContainer, CSpinner } from '@coreui/react'
 import routes from '../routes'
 
 const AppContent = () => {
+    const token = localStorage.getItem("token")
   return (
     <CContainer lg>
       <Suspense fallback={<CSpinner color="primary" />}>
         <Routes>
           {routes.map((route, idx) => {
             return (
-              route.element && (
+              route.element && token && (
                 <Route
                   key={idx}
                   path={route.path}
@@ -23,7 +24,7 @@ const AppContent = () => {
               )
             )
           })}
-          <Route path="/" element={<Navigate to="admin/dashboard" replace />} />
+          <Route path="/" element={<Navigate to="/admin/login" replace />} />
         </Routes>
       </Suspense>
     </CContainer>

@@ -21,9 +21,9 @@ class App extends Component {
       <HashRouter>
         <Suspense fallback={loading}>
           <Routes>
-            <Route exact path="/login" name="Login Page" element={<Login />} />
-            <Route exact path="/register" name="Register Page" element={<Register />} />
-            <Route path="*" name="Home" element={<DefaultLayout />} />
+            <Route exact path="/admin/login" name="Login Page" element={<Login />} />
+            <Route exact path="/admin/register" name="Register Page" element={<Register />} />
+            <Route path="/*" name="Home" element={<DefaultLayout />} />
           </Routes>
         </Suspense>
       </HashRouter>
